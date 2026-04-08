@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <!-- AOS (Animate On Scroll) Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Университеттер - FutureMe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+  <link rel="stylesheet" href="premium.css" />
+  <link rel="stylesheet" href="universities-fix.css" />
+  <!-- Белгішелерге арналған Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="ui-pro.css" />
+  <link rel="stylesheet" href="mobile-fix.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <!-- Салыстыру Модалы -->
+  <div id="compareModal" class="modal">
+    <div class="modal-content large">
+      <span id="compareModalClose" class="modal-close">&times;</span>
+      <div id="compareModalBody"></div>
+    </div>
+  </div>
+
+  <main>
+    <section class="universities-hero">
+      <div class="container">
+        <div class="section-header" data-aos="fade-down">
+          <h1>Университеттер базасы</h1>
+          <p>Қазақстан және әлемдегі үздік университеттерді таңдаңыз</p>
+        </div>
+
+        <!-- ЖАҢА ДИЗАЙНДАҒЫ ФИЛЬТР КАРТОЧКАСЫ -->
+        <div class="filter-card" data-aos="fade-up">
+          
+          <!-- 1. Басты іздеу жолағы -->
+          <div class="search-main-group">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Қай университетті іздеп жүрсіз?">
+          </div>
+
+          <div class="filter-grid">
+            <!-- 2. Қала фильтрі -->
+            <div class="filter-item">
+              <label><i class="fas fa-map-marker-alt"></i> Қала</label>
+              <select id="cityFilter">
+                <option value="">Барлық қалалар</option>
+                <!-- Қалалар JS арқылы қосылады -->
+              </select>
+            </div>
+
+            <!-- 3. Мамандық бағыты -->
+            <div class="filter-item">
+              <label><i class="fas fa-graduation-cap"></i> Бағыты</label>
+              <select id="majorFilter">
+                <option value="">Барлық бағыттар</option>
+                <option value="IT">IT және Технология</option>
+                <option value="Медицина">Медицина</option>
+                <option value="Бизнес">Бизнес және Экономика</option>
+                <option value="Инженерия">Инженерия</option>
+                <option value="Педагогика">Педагогика</option>
+              </select>
+            </div>
+
+            <!-- 4. Грант фильтрі -->
+            <div class="filter-item">
+              <label><i class="fas fa-award"></i> Қаржыландыру</label>
+              <select id="grantFilter">
+                <option value="">Барлығы</option>
+                <option value="true">Грант бар</option>
+                <option value="false">Тек ақылы</option>
+              </select>
+            </div>
+
+            <!-- 5. IELTS фильтрі -->
+            <div class="filter-item">
+              <label><i class="fas fa-language"></i> Тілдік талап</label>
+              <select id="ieltsFilter">
+                <option value="">IELTS маңызды емес</option>
+                <option value="true">IELTS қажет</option>
+                <option value="false">IELTS қажет емес</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-footer">
+            <!-- 6. Баға слайдері -->
+            <div class="price-section">
+              <div class="price-info">
+                <span><i class="fas fa-tag"></i> Максималды баға:</span>
+                <span id="priceLabel" class="price-badge">80 млн ₸</span>
+              </div>
+              <input type="range" id="priceFilter" min="0" max="80000000" step="1000000" value="80000000" class="modern-slider">
+            </div>
+
+            <!-- 7. Сұрыптау -->
+            <div class="sort-section">
+              <select id="sortFilter" class="minimal-select">
+                <option value="rating-desc">Рейтинг: Жоғары</option>
+                <option value="tuition-asc">Баға: Арзаннан</option>
+                <option value="tuition-desc">Баға: Қымбаттан</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Салыстыру панелі -->
+        <div id="comparePanel" class="compare-panel" style="display: none;">
+          <div class="compare-info">
+            <strong>Салыстыруға таңдалды:</strong>
+            <div id="compareItems" class="compare-items"></div>
+          </div>
+          <div class="compare-actions">
+            <button id="compareBtn" class="btn btn-primary">Салыстыру (<span id="compareNum">0</span>)</button>
+            <button id="clearCompareBtn" class="btn btn-outline">Тазалау</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Университеттер тізімі -->
+    <section class="section" style="padding-top: 40px;">
+      <div class="container">
+        <div id="universitiesCount" class="results-count"></div>
+
+        <div id="kazakhstanSection">
+          <h2 class="universities-section-title">Қазақстан университеттері</h2>
+          <div id="kazakhstanList" class="universities-grid"></div>
+        </div>
+
+        <div id="internationalSection" style="margin-top: 60px;">
+          <h2 class="universities-section-title">Шетел университеттері</h2>
+          <div id="internationalList" class="universities-grid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Университет туралы модаль -->
+  <div id="uniModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="script.js"></script>
+  <script src="universities.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+
+    // Слайдердегі бағаны миллионмен көрсету
+    const priceInput = document.getElementById('priceFilter');
+    const priceLabel = document.getElementById('priceLabel');
+    priceInput.addEventListener('input', (e) => {
+      let val = parseInt(e.target.value);
+      if (val >= 80000000) {
+        priceLabel.textContent = "Шексіз";
+      } else if (val >= 1000000) {
+        priceLabel.textContent = (val / 1000000).toFixed(0) + " млн ₸";
+      } else {
+        priceLabel.textContent = val.toLocaleString() + " ₸";
+      }
+    });
+  </script>
+</body>
+</html>

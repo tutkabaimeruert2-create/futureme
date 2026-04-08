@@ -1,0 +1,3765 @@
+:root {
+  --primary: #4f6cf7;
+  --primary-dark: #3d57d6;
+  --secondary: #eef2ff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --bg: #f8faff;
+  --white: #ffffff;
+  --border: #e5e7eb;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --radius: 16px;
+  --radius-sm: 12px;
+  --container: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--white);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 78px;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.logo i {
+  font-size: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  font-weight: 600;
+  color: #2b2f38;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+}
+
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-pill {
+  background: var(--secondary);
+  color: var(--primary);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  padding: 80px 0 50px;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--secondary);
+  color: var(--primary);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+.hero-text h1 {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+  color: var(--primary);
+}
+
+.hero-text p {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 650px;
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.btn-outline {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: var(--white);
+  padding: 18px 22px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  min-width: 120px;
+}
+
+.stat-card h3 {
+  color: var(--primary);
+  font-size: 1.4rem;
+}
+
+.stat-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-illustration {
+  width: 100%;
+  max-width: 420px;
+  min-height: 340px;
+  background: linear-gradient(135deg, #4f6cf7, #7c91ff);
+  color: white;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.hero-illustration i {
+  font-size: 5rem;
+  margin-bottom: 20px;
+}
+
+.hero-illustration h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero-illustration p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 0;
+}
+
+.section-light {
+  background: #f1f5ff;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.section-header p {
+  color: var(--muted);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* CARDS */
+.feature-card,
+.step-card,
+.university-card,
+.testimonial-card,
+.faq-item,
+.mini-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.feature-card,
+.step-card,
+.university-card,
+.testimonial-card,
+.faq-item {
+  padding: 28px;
+}
+
+.icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  background: var(--secondary);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+}
+
+.feature-card h3,
+.step-card h3,
+.university-card h3,
+.faq-item h3 {
+  margin-bottom: 12px;
+}
+
+.feature-card p,
+.step-card p,
+.university-card p,
+.testimonial-card p,
+.faq-item p {
+  color: var(--muted);
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.mini-card {
+  padding: 22px;
+  text-align: center;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.mini-card:hover {
+  transform: translateY(-4px);
+  color: var(--primary);
+}
+
+.testimonial-card h4 {
+  margin-top: 14px;
+  color: var(--primary);
+}
+
+/* FAQ */
+.faq-list {
+  display: grid;
+  gap: 20px;
+}
+
+/* CTA */
+.cta-section {
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, #4f6cf7, #6f86ff);
+  color: white;
+  border-radius: 24px;
+  text-align: center;
+  padding: 60px 20px;
+  box-shadow: var(--shadow);
+}
+
+.cta-box h2 {
+  font-size: 2.3rem;
+  margin-bottom: 10px;
+}
+
+.cta-box p {
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* FOOTER */
+.footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 50px 0 30px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 30px;
+}
+
+.footer h3,
+.footer h4 {
+  color: white;
+  margin-bottom: 14px;
+}
+
+.footer p,
+.footer a {
+  color: #d1d5db;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 30px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+/* MOBILE */
+@media (max-width: 992px) {
+  .hero-content,
+  .grid-3,
+  .grid-4,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    background: white;
+    padding: 20px 0 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .navbar-inner {
+    flex-wrap: wrap;
+    padding: 16px 0;
+  }
+
+  .nav-user {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding-top: 50px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .stat-card {
+    width: 100%;
+  }
+}
+.box{
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+.muted{ color: var(--muted); }
+.form label{ display:block; margin-top: 12px; font-weight: 700; }
+.form input{
+  width: 100%;
+  margin-top: 8px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  outline: none;
+}
+.form input:focus{
+  border-color: var(--primary);
+}
+.auth-message{
+  margin-top: 14px;
+  min-height: 20px;
+  font-weight: 700;
+}
+.auth-error{ color: #dc2626; }
+.auth-success{ color: #16a34a; }
+
+.card-lite{
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+.test-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.progress-wrap {
+  margin-bottom: 24px;
+}
+
+.progress-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary), #7c91ff);
+  transition: width 0.3s ease;
+}
+
+.question-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.question-box h2 {
+  margin-bottom: 20px;
+  font-size: 1.7rem;
+}
+
+.answers-list {
+  display: grid;
+  gap: 14px;
+}
+
+.answer-btn {
+  width: 100%;
+  text-align: left;
+  padding: 16px 18px;
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  background: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+
+.answer-btn:hover {
+  border-color: var(--primary);
+  background: #f8faff;
+}
+
+.answer-btn.selected {
+  border-color: var(--primary);
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+.test-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.result-box {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.score-card {
+  background: var(--secondary);
+  padding: 18px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.score-card h4 {
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.score-card p {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.recommended-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.recommended-item {
+  background: var(--secondary);
+  color: var(--primary);
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.universities-hero {
+  padding: 70px 0 30px;
+  background: linear-gradient(180deg, #f4f7ff 0%, #eef3ff 100%);
+}
+
+.filter-panel {
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.filter-panel input,
+.filter-panel select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.filter-panel input:focus,
+.filter-panel select:focus {
+  border-color: var(--primary);
+}
+
+.results-count {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.universities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.uni-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid transparent;
+}
+
+.uni-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(79, 108, 247, 0.15);
+  border-color: #dbe4ff;
+}
+
+.uni-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.uni-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.uni-location {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.uni-rating {
+  background: #fff7ed;
+  color: #ea580c;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.uni-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.uni-badge {
+  background: var(--secondary);
+  color: var(--primary);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.uni-badge.light {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.uni-description {
+  color: var(--muted);
+  margin-bottom: 18px;
+  min-height: 70px;
+}
+
+.uni-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .filter-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .universities-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .universities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .uni-card-top {
+    flex-direction: column;
+  }
+
+  .uni-actions .btn {
+    width: 100%;
+  }
+}
+.universities-section-title {
+  margin-bottom: 24px;
+}
+
+.universities-section-title h2 {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.universities-section-title p {
+  color: var(--muted);
+}
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666;
+}
+
+/* ТОП белгісі */
+.top-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #f59e0b;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+}
+
+/* Compare Panel */
+.compare-panel {
+  background: #f8f9ff;
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  padding: 14px 20px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Университет ақпараты */
+.uni-info {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 14px 0;
+  color: #374151;
+}
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.test-result-box {
+  background: #f0f4ff;
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 16px 0;
+  font-size: 1.05rem;
+}
+
+.major-item {
+  background: var(--secondary);
+  color: var(--primary);
+  padding: 10px 18px;
+  border-radius: 999px;
+  display: inline-block;
+  margin: 6px 8px 6px 0;
+  font-weight: 600;
+}
+
+.saved-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.saved-uni-card {
+  background: #f8f9ff;
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+}
+/* Toast Notification */
+#toastContainer {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  color: white;
+  min-width: 280px;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toast.toast-success {
+  background: linear-gradient(135deg, #10b981, #14b8a6);
+}
+
+.toast.toast-error {
+  background: linear-gradient(135deg, #ef4444, #f43f5e);
+}
+
+.toast i {
+  font-size: 1.5rem;
+}
+.save-btn.saved {
+  background-color: #10b981;
+  cursor: not-allowed;
+}
+
+.save-btn.saved:hover {
+  background-color: #059669;
+}
+/* Compare Panel New Styles */
+.compare-panel {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.compare-info {
+  width: 100%;
+}
+
+.compare-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.compare-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.compare-item-remove {
+  cursor: pointer;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.compare-item-remove:hover {
+  color: #ef4444; /* red */
+}
+
+.compare-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 12px;
+}
+/* Compare Modal Styles */
+.modal-content.large {
+  max-width: 1100px; /* Енін үлкейту */
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.compare-table th, .compare-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.compare-table th {
+  background-color: #f9fafb;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+.compare-table td {
+  font-size: 1rem;
+  vertical-align: top;
+}
+
+.compare-table .header-row th {
+  text-align: center;
+  font-size: 1.3rem;
+  padding-bottom: 20px;
+}
+
+.compare-table .param-col {
+  font-weight: 700;
+  color: var(--muted);
+  width: 20%;
+}
+/* AI Helper Page Styles */
+.ai-helper-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.chat-container {
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  height: 70vh; /* Биіктігін реттеуге болады */
+}
+
+.chat-box {
+  flex-grow: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chat-message {
+  display: flex;
+  max-width: 80%;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+}
+
+.chat-message.ai {
+  align-self: flex-start;
+}
+
+.message-bubble {
+  padding: 14px 20px;
+  border-radius: 18px;
+  line-height: 1.5;
+}
+
+.chat-message.user .message-bubble {
+  background: var(--primary);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-message.ai .message-bubble {
+  background: #f3f4f6;
+  color: #1f2937;
+  border-bottom-left-radius: 4px;
+}
+
+.quick-prompts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 24px 16px;
+  border-top: 1px solid var(--border);
+}
+
+.prompt-btn {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.prompt-btn:hover {
+  background: #e5e7eb;
+  border-color: #d1d5db;
+}
+
+.chat-form {
+  display: flex;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.chat-form input {
+  flex-grow: 1;
+  border: 1px solid var(--border);
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.chat-form input:focus {
+  border-color: var(--primary);
+}
+
+.send-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.send-btn:hover {
+  background: var(--primary-dark);
+}
+/* Majors Page Styles */
+.majors-hero {
+  padding: 70px 0 30px;
+  background: #f8faff;
+}
+
+.majors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.major-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.major-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(79, 108, 247, 0.1);
+}
+
+.major-category {
+  background: var(--secondary);
+  color: var(--primary);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  align-self: flex-start;
+  margin-bottom: 16px;
+}
+
+.major-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  flex-grow: 1;
+}
+
+.major-card p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+#modalBody h4 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+/* Admin Panel Styles */
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.admin-section {
+  background: white;
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+}
+
+.admin-section h2 {
+  margin-bottom: 20px;
+}
+
+.admin-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f8f9ff;
+  border-radius: 12px;
+}
+
+.admin-item span {
+  font-weight: 600;
+}
+
+.btn-sm {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-edit {
+  background: #eef2ff;
+  color: var(--primary);
+}
+
+.btn-delete {
+  background: #fee2e2;
+  color: #dc2626;
+  margin-left: 8px;
+}
+/* Career Map Tree Styling */
+.career-map-section {
+  background-color: #ffffff;
+  overflow-x: auto; /* Мобильді нұсқада оңға-солға жылжыту үшін */
+}
+
+
+/* --- FIX: Tree тым көп тармақ болғанда "сынбасын" --- */
+.tree-container{
+  padding: 40px 0;
+  overflow-x: auto;         /* кең болса – скролл */
+  overflow-y: hidden;
+}
+
+.tree{
+  width: max-content;       /* ең маңыздысы: ені контентке байланысты */
+  margin: 0 auto;           /* ортасына */
+  padding: 0 40px 20px;     /* шеттері қиылып қалмасын */
+}
+
+/* Бұрынғы display:flex алып тасталады */
+.tree ul{
+  padding-top: 20px;
+  position: relative;
+  transition: all 0.5s;
+  display: table;           /* sibling-тер бір қатарда тұрақты тұрады */
+  margin: 0 auto;
+}
+
+/* Бұрынғы float:left-ті қолданбаймыз */
+.tree li{
+  list-style-type: none;
+  position: relative;
+  padding: 20px 10px 0 10px;
+  text-align: center;
+  vertical-align: top;
+  display: table-cell;      /* бір қатарда тең/тұрақты */
+  transition: all 0.5s;
+}
+
+/* Сызықтарды салу */
+.tree li::before, .tree li::after {
+  content: '';
+  position: absolute; 
+  top: 0; 
+  right: 50%;
+  border-top: 2px solid #e0e0e0;
+  width: 50%; 
+  height: 20px;
+}
+.tree li::after {
+  right: auto; 
+  left: 50%;
+  border-left: 2px solid #e0e0e0;
+}
+
+.tree li:only-child::after, .tree li:only-child::before {
+  display: none;
+}
+.tree li:only-child { padding-top: 0; }
+.tree li:first-child::before, .tree li:last-child::after {
+  border: 0 none;
+}
+.tree li:last-child::before {
+  border-right: 2px solid #e0e0e0;
+  border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after {
+  border-radius: 5px 0 0 0;
+}
+
+.tree ul ul::before {
+  content: '';
+  position: absolute; 
+  top: 0; 
+  left: 50%;
+  border-left: 2px solid #e0e0e0;
+  width: 0; 
+  height: 20px;
+}
+
+/* Түйіншектер стилі */
+.tree li a {
+  border: 1px solid #e0e0e0;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #444;
+  font-family: inherit;
+  font-size: 14px;
+  display: inline-block;
+  border-radius: 12px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  font-weight: 500;
+}
+
+/* Арнайы түстер */
+.tree li a.root-node {
+  background: #5D78FF;
+  color: white;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.tree li a.parent-node {
+  background: #f0f3ff;
+  color: #5D78FF;
+  border: 1px solid #dce2ff;
+  font-weight: 600;
+}
+
+/* Эффект: Меңзерді апарғанда */
+.tree li a:hover {
+  background: #5D78FF;
+  color: #fff;
+  border-color: #5D78FF;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(93, 120, 255, 0.2);
+}
+
+.tree li a:hover + ul li::after, 
+.tree li a:hover + ul li::before, 
+.tree li a:hover + ul::before, 
+.tree li a:hover + ul ul::before {
+  border-color: #5D78FF;
+}
+
+/* Мобильді бейімдеу: экран кішкентай болса, айналдыру мүмкіндігі болады */
+@media (max-width: 992px) {
+  .career-map-section .container {
+    overflow-x: scroll;
+    padding-bottom: 20px;
+  }
+}
+/* Фильтр және Контент орналасуы */
+.university-page-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.filters-sidebar {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 100px;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.filter-group select, 
+.filter-group input[type="range"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.card-tags span {
+  background: #f0f3ff;
+  color: #5D78FF;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Мобильді нұсқа */
+@media (max-width: 768px) {
+  .university-page-layout {
+    grid-template-columns: 1fr;
+  }
+  .filters-sidebar {
+    position: relative;
+    top: 0;
+  }
+}
+/* Басты контейнер */
+.filter-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+    border: 1px solid #f0f0f0;
+    margin: -40px auto 40px;
+    max-width: 1000px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Іздеу жолағы */
+.search-main-group {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.search-main-group input {
+    width: 100%;
+    padding: 18px 24px 18px 56px;
+    border-radius: 16px;
+    border: 2px solid #f5f5f7;
+    background: #fbfbfd;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.search-main-group input:focus {
+    border-color: #5D78FF;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(93, 120, 255, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #5D78FF;
+    font-size: 18px;
+}
+
+/* Фильтрлер торы */
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.filter-item label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #8e8e93;
+    margin-bottom: 8px;
+    margin-left: 4px;
+}
+
+.filter-item select {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid #e5e5ea;
+    background-color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-item select:hover {
+    border-color: #5D78FF;
+}
+
+/* Слайдер және Футер */
+.filter-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #f5f5f7;
+}
+
+.price-section {
+    flex-grow: 1;
+}
+
+.price-info {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-badge {
+    background: #5D78FF;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Слайдер дизайны - ТҮЗЕТІЛГЕН НҰСҚА */
+.modern-slider {
+    -webkit-appearance: none; /* Chrome, Safari үшін */
+    appearance: none;         /* СТАНДАРТТЫ ТҮРІ (Осы жолды қостық) */
+    width: 100%;
+    height: 6px;
+    background: #e5e5ea;
+    border-radius: 5px;
+    outline: none;
+}
+
+.modern-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Chrome, Safari үшін */
+    appearance: none;         /* СТАНДАРТТЫ ТҮРІ (Осы жолды қостық) */
+    width: 20px;
+    height: 20px;
+    background: #5D78FF;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* Firefox браузері үшін де қосып қойған дұрыс (қате шықпауы үшін) */
+.modern-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #5D78FF;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    border: none;
+}
+
+/* Мобильді бейімдеу */
+@media (max-width: 768px) {
+    .filter-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .filter-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+/* Профильдегі сақталған карточка */
+.saved-uni-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8faff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid #eef2ff;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+
+.saved-uni-card:hover {
+    border-color: #5D78FF;
+    transform: translateY(-2px);
+}
+
+/* Өшіру батырмасы (Қоқыс жәшігі) */
+.remove-saved-btn {
+    background: #ffebee;
+    color: #ef5350;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.remove-saved-btn:hover {
+    background: #ef5350;
+    color: white;
+}
+
+/* Университеттер бетіндегі Сақталды батырмасының стилі */
+.save-btn.saved {
+    background-color: #2ecc71 !important;
+    border-color: #2ecc71 !important;
+    color: white !important;
+}
+.profile-saved-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.delete-btn {
+    background: #fff0f0;
+    color: #ff4757;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.delete-btn:hover {
+    background: #ff4757;
+    color: #fff;
+}
+
+.empty-msg {
+    color: #a0a0a0;
+    font-style: italic;
+}
+/* Сақталған университеттер торы */
+.saved-unis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Карточка ені */
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Жеке карточка дизайны */
+.profile-saved-card {
+    display: flex;
+    justify-content: space-between; /* Мәтін сол жақта, батырма оң жақта */
+    align-items: center;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f2f5;
+    transition: all 0.3s ease;
+}
+
+.profile-saved-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(93, 120, 255, 0.15);
+}
+
+/* Мәтіндерді астын-астына қою */
+.card-info {
+    display: flex;
+    flex-direction: column; /* Вертикалды бағыт */
+    gap: 5px;
+}
+
+.card-info h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #2d3436;
+    font-weight: 700;
+}
+
+.card-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #636e72;
+}
+
+.card-info small {
+    color: #b2bec3;
+    font-size: 12px;
+}
+
+/* Өшіру (Trash) батырмасы */
+.delete-btn {
+    background: #fff0f0;
+    color: #ff7675;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Батырма қысылып қалмауы үшін */
+}
+
+.delete-btn:hover {
+    background: #ff7675;
+    color: white;
+}
+/* Жасыл түс және әдемі өзгеру */
+.save-btn.saved {
+    background-color: #10b981 !important; /* Жасыл түс */
+    border-color: #10b981 !important;
+    color: white !important;
+    font-weight: bold;
+}
+/* Бастапқы көк түс (сіздің сайтыңыздағы стандартты түс) */
+.save-btn {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: white !important;
+}
+
+/* Сақталған кездегі жасыл түс */
+.save-btn.saved {
+    background-color: #10b981 !important; /* Жасыл түс */
+    border-color: #10b981 !important;
+    color: white !important;
+}
+/* Сақталған университеттердің негізгі торы */
+#savedUniversitiesList {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important; /* Карточкалар ені */
+    gap: 20px !important;
+    padding: 20px 0 !important;
+}
+
+/* Жеке карточка дизайны */
+.profile-saved-card {
+    display: flex !important;
+    justify-content: space-between !important; /* Мәтін сол жақта, батырма оң жақта */
+    align-items: center !important;
+    background: #ffffff !important;
+    padding: 20px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid #f0f2f5 !important;
+    transition: 0.3s ease;
+}
+
+.profile-saved-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(93, 120, 255, 0.15) !important;
+}
+
+/* Мәтіндерді вертикалды (астын-астына) қою */
+.card-info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    text-align: left !important;
+}
+
+.card-info h4 {
+    margin: 0 !important;
+    font-size: 16px !important;
+    color: #2d3436 !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+}
+
+.info-row {
+    font-size: 14px !important;
+    color: #636e72 !important;
+}
+
+.info-row small {
+    color: #b2bec3 !important;
+    font-size: 12px !important;
+}
+
+/* Өшіру (Trash) батырмасы */
+.delete-btn {
+    background: #fff0f0 !important;
+    color: #ff7675 !important;
+    border: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 12px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    transition: 0.2s;
+}
+
+.delete-btn:hover {
+    background: #ff7675 !important;
+    color: white !important;
+    transform: rotate(10deg);
+}
+/* Контейнерді торға айналдыру */
+#savedUniversitiesList {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    gap: 20px !important;
+    padding: 20px 0 !important;
+}
+
+/* Карточка дизайны */
+.profile-saved-card {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background: #ffffff !important;
+    padding: 20px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid #f0f2f5 !important;
+    transition: 0.3s ease;
+}
+
+/* Мәтіндерді астын-астына қоюды мәжбүрлеу */
+.card-info {
+    display: flex !important;
+    flex-direction: column !important; /* Вертикалды тізу */
+    align-items: flex-start !important;
+    gap: 8px !important;
+    text-align: left !important;
+    width: 80% !important;
+}
+
+.uni-title {
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #2d3436 !important;
+    white-space: normal !important; /* Мәтін келесі жолға түсуі үшін */
+}
+
+.uni-loc {
+    margin: 0 !important;
+    font-size: 14px !important;
+    color: #636e72 !important;
+}
+
+.uni-date {
+    font-size: 12px !important;
+    color: #b2bec3 !important;
+}
+
+/* Өшіру батырмасы */
+.delete-btn {
+    background: #fff0f0 !important;
+    color: #ff7675 !important;
+    border: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 12px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+.delete-btn:hover {
+    background: #ff7675 !important;
+    color: white !important;
+}
+/* Контейнерді тор түріне келтіру */
+#savedUniversitiesList {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+    gap: 20px !important;
+    padding-top: 20px !important;
+}
+
+/* Карточка дизайны */
+.profile-saved-card {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background: #ffffff !important;
+    padding: 20px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    border: 1px solid #f0f2f5 !important;
+    transition: 0.3s ease;
+}
+
+/* Мәтіндер блогы - астын-астына тізу */
+.card-info {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    text-align: left !important;
+}
+
+.card-info h4 {
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #2d3436 !important;
+    line-height: 1.3 !important;
+}
+
+.uni-meta {
+    display: flex !important;
+    flex-direction: column !important; /* Мекенжай мен күнді астын-астына қою */
+    gap: 4px !important;
+    font-size: 13px !important;
+    color: #636e72 !important;
+}
+
+.save-date {
+    color: #b2bec3 !important;
+    font-size: 12px !important;
+}
+
+/* Өшіру батырмасы */
+.delete-btn {
+    background: #fff0f0 !important;
+    color: #ff7675 !important;
+    border: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: 0.2s !important;
+}
+
+.delete-btn:hover {
+    background: #ff7675 !important;
+    color: white !important;
+}
+/* Профильдегі тізім торы */
+.saved-unis-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)) !important;
+    gap: 20px !important;
+    margin-top: 20px !important;
+}
+
+/* Карточка дизайны */
+.profile-saved-card {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background: #ffffff !important;
+    padding: 20px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+    border: 1px solid #eee !important;
+    transition: 0.3s ease;
+}
+
+/* Ақпарат блогы (Астын-астына қою) */
+.card-info {
+    display: flex !important;
+    flex-direction: column !important; /* Мәтіндерді вертикалды тізу */
+    gap: 6px !important;
+    text-align: left !important;
+    max-width: 80% !important;
+}
+
+.uni-name-text {
+    margin: 0 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #333 !important;
+    line-height: 1.2 !important;
+}
+
+.uni-city-text {
+    margin: 0 !important;
+    font-size: 14px !important;
+    color: #666 !important;
+}
+
+.uni-date-text {
+    color: #aaa !important;
+    font-size: 12px !important;
+}
+
+/* Өшіру батырмасы */
+.delete-btn {
+    background: #fff0f0 !important;
+    color: #ff4757 !important;
+    border: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+.delete-btn:hover {
+    background: #ff4757 !important;
+    color: white !important;
+}
+/* =========================
+   DARK MODE (Patch)
+   ========================= */
+
+/* Theme variables */
+:root{
+  --surface: #ffffff;
+  --surface-2: #f1f5ff;   /* section-light */
+  --input-bg: #ffffff;
+}
+
+/* Dark theme overrides via body[data-theme="dark"] */
+body[data-theme="dark"]{
+  --bg: #0b1220;
+  --surface: #0f172a;
+  --surface-2: #101b33;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #22304a;
+  --secondary: rgba(79,108,247,0.15);
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+  --input-bg: #0b1326;
+}
+
+/* Global surfaces */
+body[data-theme="dark"] .navbar,
+body[data-theme="dark"] .profile-card,
+body[data-theme="dark"] .uni-card,
+body[data-theme="dark"] .filter-card,
+body[data-theme="dark"] .modal-content,
+body[data-theme="dark"] .feature-card,
+body[data-theme="dark"] .step-card,
+body[data-theme="dark"] .university-card,
+body[data-theme="dark"] .testimonial-card,
+body[data-theme="dark"] .faq-item{
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+/* Section background */
+body[data-theme="dark"] .section-light{
+  background: var(--surface-2) !important;
+}
+
+/* Navbar border/shadow in dark */
+body[data-theme="dark"] .navbar{
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Text colors */
+body[data-theme="dark"] p,
+body[data-theme="dark"] .muted,
+body[data-theme="dark"] .uni-location,
+body[data-theme="dark"] .uni-description{
+  color: var(--muted) !important;
+}
+
+/* Inputs/selects */
+body[data-theme="dark"] input,
+body[data-theme="dark"] select,
+body[data-theme="dark"] textarea{
+  background: var(--input-bg) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+/* Links in navbar */
+body[data-theme="dark"] .nav-links a{
+  color: var(--text) !important;
+}
+body[data-theme="dark"] .nav-links a:hover,
+body[data-theme="dark"] .nav-links a.active{
+  color: var(--primary) !important;
+}
+
+/* Theme toggle button */
+.theme-toggle{
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.theme-toggle:hover{
+  transform: translateY(-1px);
+  border-color: var(--primary);
+}
+/* =========================
+   DARK MODE FIX: Career Map (Tree)
+   style.css соңына қосыңыз
+   ========================= */
+
+/* Section фон */
+.career-map-section{
+  background: transparent !important;
+}
+
+/* Tree node (барлық түйіндер) */
+.tree li a{
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+
+/* Parent node (категориялар: IT, Медицина т.б.) */
+.tree li a.parent-node{
+  background: var(--secondary) !important;
+  color: var(--primary) !important;
+  border-color: var(--border) !important;
+}
+
+/* Connector сызықтары (тармақ сызықтары) */
+.tree li::before,
+.tree li::after,
+.tree ul ul::before{
+  border-color: var(--border) !important;
+}
+
+/* Root node өзгеріссіз қалсын (басты көк) */
+.tree li a.root-node{
+  background: var(--primary) !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* Dark mode-та hover кезінде сызық та көк болсын */
+body[data-theme="dark"] .tree li a:hover + ul li::after,
+body[data-theme="dark"] .tree li a:hover + ul li::before,
+body[data-theme="dark"] .tree li a:hover + ul::before,
+body[data-theme="dark"] .tree li a:hover + ul ul::before{
+  border-color: var(--primary) !important;
+}
+/* =========================
+   DARK MODE FIX: Popular directions (.mini-card)
+   style.css соңына қосыңыз
+   ========================= */
+
+body[data-theme="dark"] .mini-card{
+  background: var(--surface) !important;     /* ақ емес, dark surface */
+  color: var(--text) !important;            /* мәтін анық көрінеді */
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.35) !important;
+}
+
+body[data-theme="dark"] .mini-card:hover{
+  background: rgba(79,108,247,0.15) !important; /* primary tint */
+  border-color: rgba(79,108,247,0.55) !important;
+  color: var(--text) !important;
+  transform: translateY(-4px);
+}
+/* DARK MODE: var(--white) ақ болып қалмасын */
+body[data-theme="dark"]{
+  --white: var(--surface); /* немесе нақты: #0f172a */
+}
+/* DARK MODE: Hero ішіндегі 3 stat-card */
+body[data-theme="dark"] .hero-stats .stat-card{
+  background: rgba(15, 23, 42, 0.75) !important; /* glass-like */
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35) !important;
+  backdrop-filter: blur(8px);
+}
+
+body[data-theme="dark"] .hero-stats .stat-card h3{
+  color: #c7d2fe !important; /* ашық көк, жақсы көрінеді */
+}
+
+body[data-theme="dark"] .hero-stats .stat-card p{
+  color: var(--muted) !important;
+}
+/* =========================
+   CTA NEW MODERN STYLE
+   ========================= */
+
+.cta-section{
+  padding-top: 30px;
+  padding-bottom: 90px;
+}
+
+.cta-modern{
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 48px;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 36px;
+  align-items: center;
+
+  /* Light mode: soft gradient + border */
+  background: linear-gradient(180deg, rgba(79,108,247,0.10), rgba(79,108,247,0.03));
+  border: 1px solid rgba(79,108,247,0.18);
+  box-shadow: var(--shadow);
+}
+
+.cta-kicker{
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--secondary);
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.cta-modern h2{
+  margin: 0 0 10px;
+  font-size: 2.4rem;
+  line-height: 1.15;
+}
+
+.cta-modern p{
+  margin: 0 0 18px;
+  color: var(--muted);
+  max-width: 560px;
+}
+
+.cta-actions{
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.cta-points{
+  display: grid;
+  gap: 10px;
+}
+
+.cta-point{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.cta-point i{
+  color: var(--primary);
+  background: rgba(79,108,247,0.12);
+  border: 1px solid rgba(79,108,247,0.18);
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right visuals */
+.cta-right{
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta-orb{
+  position: absolute;
+  filter: blur(18px);
+  opacity: 0.9;
+}
+
+.orb-1{
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(79,108,247,0.55), rgba(79,108,247,0));
+  top: -40px; right: -50px;
+}
+
+.orb-2{
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(124,145,255,0.45), rgba(124,145,255,0));
+  bottom: -60px; left: -60px;
+}
+
+.cta-sidecard{
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  border-radius: 22px;
+  padding: 22px;
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.10);
+  text-align: left;
+}
+
+.cta-sideicon{
+  width: 44px; height: 44px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(79,108,247,0.15);
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+}
+
+.cta-sidetitle{
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.cta-sidesub{
+  margin-top: 6px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* Dark mode адаптация */
+body[data-theme="dark"] .cta-modern{
+  background: linear-gradient(180deg, rgba(79,108,247,0.18), rgba(15,23,42,0.85));
+  border: 1px solid rgba(79,108,247,0.22);
+}
+
+body[data-theme="dark"] .cta-sidecard{
+  background: rgba(15,23,42,0.55);
+  border: 1px solid rgba(34,48,74,0.85);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.45);
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .cta-modern{
+    grid-template-columns: 1fr;
+    padding: 28px;
+  }
+  .cta-right{
+    min-height: 200px;
+  }
+  .cta-modern h2{
+    font-size: 2rem;
+  }
+}
+/* =====================================================
+   GLOBAL DARK MODE PATCH (ALL PAGES)
+   style.css соңына қойыңыз
+   ===================================================== */
+
+/* 1) Dark variables */
+body[data-theme="dark"]{
+  --bg: #0b1220;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #22304a;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35);
+
+  /* бастысы: ақ түсті "surface" қыламыз */
+  --surface: #0f172a;
+  --surface-2: #101b33;
+
+  /* сіздің CSS-та көп жерде var(--white) тұр — соны да dark surface қыламыз */
+  --white: #0f172a;
+
+  /* secondary-ді қараңғыға жұмсартып береміз */
+  --secondary: rgba(79,108,247,0.14);
+}
+
+/* 2) Body/sections */
+body[data-theme="dark"]{
+  background: var(--bg);
+  color: var(--text);
+}
+body[data-theme="dark"] .section-light{
+  background: var(--surface-2) !important;
+}
+
+/* 3) NAVBAR */
+body[data-theme="dark"] .navbar{
+  background: rgba(15,23,42,0.85) !important;
+  border-bottom: 1px solid var(--border);
+  box-shadow: none !important;
+  backdrop-filter: blur(10px);
+}
+body[data-theme="dark"] .nav-links a{
+  color: var(--text) !important;
+}
+body[data-theme="dark"] .nav-links a:hover,
+body[data-theme="dark"] .nav-links a.active{
+  color: var(--primary) !important;
+}
+body[data-theme="dark"] .user-pill{
+  background: rgba(79,108,247,0.16) !important;
+  color: #c7d2fe !important;
+}
+
+/* 4) Барлық негізгі CARD/BOX компоненттер */
+body[data-theme="dark"] .box,
+body[data-theme="dark"] .card-lite,
+body[data-theme="dark"] .feature-card,
+body[data-theme="dark"] .step-card,
+body[data-theme="dark"] .university-card,
+body[data-theme="dark"] .testimonial-card,
+body[data-theme="dark"] .faq-item,
+body[data-theme="dark"] .stat-card,
+body[data-theme="dark"] .profile-card,
+body[data-theme="dark"] .uni-card,
+body[data-theme="dark"] .admin-section,
+body[data-theme="dark"] .admin-item,
+body[data-theme="dark"] .compare-panel,
+body[data-theme="dark"] .saved-uni-card,
+body[data-theme="dark"] .profile-saved-card,
+body[data-theme="dark"] .question-box,
+body[data-theme="dark"] .result-box,
+body[data-theme="dark"] .chat-container,
+body[data-theme="dark"] .prompt-btn{
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+/* 5) Мәтіндер */
+body[data-theme="dark"] p,
+body[data-theme="dark"] .muted,
+body[data-theme="dark"] .uni-location,
+body[data-theme="dark"] .uni-description,
+body[data-theme="dark"] .results-count{
+  color: var(--muted) !important;
+}
+
+/* 6) INPUT / SELECT / TEXTAREA (барлық бет) */
+body[data-theme="dark"] input,
+body[data-theme="dark"] select,
+body[data-theme="dark"] textarea{
+  background: rgba(11,19,38,0.85) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+body[data-theme="dark"] input::placeholder{
+  color: rgba(156,163,175,0.8) !important;
+}
+
+/* 7) Buttons (outline) */
+body[data-theme="dark"] .btn-outline{
+  background: transparent !important;
+  color: #c7d2fe !important;
+  border-color: rgba(79,108,247,0.65) !important;
+}
+body[data-theme="dark"] .btn-outline:hover{
+  background: rgba(79,108,247,0.16) !important;
+  color: #e5e7eb !important;
+}
+
+/* 8) MINI-CARD (Танымал бағыттар) */
+body[data-theme="dark"] .mini-card{
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 14px 35px rgba(0,0,0,0.35) !important;
+}
+body[data-theme="dark"] .mini-card:hover{
+  background: rgba(79,108,247,0.15) !important;
+  border-color: rgba(79,108,247,0.55) !important;
+  color: var(--text) !important;
+}
+
+/* 9) CAREER TREE (Мамандықтар картасы) */
+body[data-theme="dark"] .tree li a{
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  border-color: var(--border) !important;
+}
+body[data-theme="dark"] .tree li a.parent-node{
+  background: var(--secondary) !important;
+  color: #c7d2fe !important;
+  border-color: var(--border) !important;
+}
+body[data-theme="dark"] .tree li::before,
+body[data-theme="dark"] .tree li::after,
+body[data-theme="dark"] .tree ul ul::before{
+  border-color: var(--border) !important;
+}
+
+/* 10) MODAL */
+body[data-theme="dark"] .modal-content{
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+}
+body[data-theme="dark"] .modal-close{
+  color: var(--muted) !important;
+}
+
+/* 11) Compare table */
+body[data-theme="dark"] .compare-table th{
+  background: rgba(255,255,255,0.03) !important;
+  color: var(--text) !important;
+}
+body[data-theme="dark"] .compare-table td{
+  color: var(--text) !important;
+  border-bottom-color: var(--border) !important;
+}
+body[data-theme="dark"] .compare-table th,
+body[data-theme="dark"] .compare-table td{
+  border-bottom: 1px solid var(--border) !important;
+}
+
+/* 12) AI чаттағы bubble */
+body[data-theme="dark"] .chat-message.ai .message-bubble{
+  background: rgba(255,255,255,0.06) !important;
+  color: var(--text) !important;
+}
+body[data-theme="dark"] .chat-message.user .message-bubble{
+  background: var(--primary) !important;
+  color: #fff !important;
+}
+/* =====================================================
+   DARK MODE FIX: Majors + Universities + Profile
+   style.css ең соңына қосыңыз
+   ===================================================== */
+
+/* 1) Көк-қара фондағы мәтінді анық қылу (жалпы) */
+body[data-theme="dark"] .section-header h1,
+body[data-theme="dark"] .section-header h2,
+body[data-theme="dark"] .section-header h3{
+  color: #f9fafb !important;
+}
+
+body[data-theme="dark"] .section-header p{
+  color: rgba(229, 231, 235, 0.78) !important;
+}
+
+/* 2) HERO/Light gradient секциялар (көк-қара аймақ) */
+body[data-theme="dark"] .universities-hero,
+body[data-theme="dark"] .majors-hero{
+  background: linear-gradient(180deg, rgba(15,23,42,0.92) 0%, rgba(11,18,32,1) 100%) !important;
+  border-bottom: 1px solid var(--border);
+}
+
+/* 3) UNIVERSITIES беті: filter панель/карточкалар/санақ */
+body[data-theme="dark"] .filter-panel,
+body[data-theme="dark"] .filter-card,
+body[data-theme="dark"] .filters-sidebar{
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.35) !important;
+}
+
+body[data-theme="dark"] .results-count{
+  color: rgba(229,231,235,0.75) !important;
+}
+
+body[data-theme="dark"] .universities-section-title{
+  color: #f9fafb !important;
+}
+
+body[data-theme="dark"] .uni-card{
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+}
+
+body[data-theme="dark"] .uni-rating{
+  background: rgba(255, 247, 237, 0.10) !important;
+  color: #fdba74 !important;
+}
+
+body[data-theme="dark"] .uni-badge.light{
+  background: rgba(255,255,255,0.06) !important;
+  color: rgba(229,231,235,0.85) !important;
+  border: 1px solid var(--border);
+}
+
+/* 4) MAJORS беті: карточкалар және категория badge */
+body[data-theme="dark"] .major-card{
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.35) !important;
+}
+
+body[data-theme="dark"] .major-category{
+  background: rgba(79,108,247,0.16) !important;
+  color: #c7d2fe !important;
+  border: 1px solid rgba(79,108,247,0.25);
+}
+
+body[data-theme="dark"] .major-card p{
+  color: rgba(229,231,235,0.75) !important;
+}
+
+/* 5) PROFILE беті: ақ блоктарды dark surface қылу */
+body[data-theme="dark"] .profile-card{
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+}
+
+body[data-theme="dark"] .test-result-box{
+  background: rgba(79,108,247,0.10) !important;
+  border: 1px solid rgba(79,108,247,0.18);
+}
+
+body[data-theme="dark"] .major-item{
+  background: rgba(79,108,247,0.14) !important;
+  color: #c7d2fe !important;
+  border: 1px solid rgba(79,108,247,0.22);
+}
+
+/* Saved universities cards in profile */
+body[data-theme="dark"] .saved-uni-card,
+body[data-theme="dark"] .profile-saved-card{
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* 6) Modal/Compare table: ақ болып қалмасын */
+body[data-theme="dark"] .modal-content{
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+}
+
+body[data-theme="dark"] .compare-table th{
+  background: rgba(255,255,255,0.04) !important;
+  color: #f9fafb !important;
+}
+
+body[data-theme="dark"] .compare-table td{
+  color: rgba(229,231,235,0.88) !important;
+}
+
+body[data-theme="dark"] .compare-table th,
+body[data-theme="dark"] .compare-table td{
+  border-bottom: 1px solid var(--border) !important;
+}
+/* =========================
+   Career Map V2 (Accordion)
+   ========================= */
+.career-map-v2{
+  margin-top: 26px;
+}
+
+.career-root-v2{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 800;
+  box-shadow: var(--shadow);
+  margin: 0 auto 22px;
+}
+
+.career-root-v2 i{ opacity: 0.95; }
+
+.career-grid-v2{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.career-item-v2{
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.career-item-v2 summary{
+  list-style: none;
+}
+.career-item-v2 summary::-webkit-details-marker{ display: none; }
+
+.career-summary-v2{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.career-ico{
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: var(--secondary);
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--border);
+}
+
+.career-name{
+  font-weight: 800;
+  color: var(--text);
+  flex: 1;
+}
+
+.career-arrow{
+  color: var(--muted);
+  transition: transform .2s ease;
+}
+
+.career-item-v2[open] .career-arrow{
+  transform: rotate(180deg);
+}
+
+.career-children-v2{
+  padding: 0 16px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.career-chip-v2{
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.career-chip-v2:hover{
+  border-color: var(--primary);
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+/* Dark mode compatible (сіздің dark variables бар болса өзі үйлеседі) */
+body[data-theme="dark"] .career-item-v2{
+  background: var(--surface);
+  border-color: var(--border);
+}
+body[data-theme="dark"] .career-chip-v2{
+  background: rgba(11,19,38,0.85);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  .career-grid-v2{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+}
+@media (max-width: 576px){
+  .career-grid-v2{ grid-template-columns: 1fr; }
+}
+/* Popular Directions with images */
+.directions-grid{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.direction-card{
+  position: relative;
+  display: block;
+  height: 150px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  background: #000;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.direction-card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform .35s ease;
+  display: block;
+}
+
+.direction-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.75) 100%);
+}
+
+.direction-content{
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;
+  color: #fff;
+}
+
+.direction-content h3{
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.direction-content p{
+  margin: 0;
+  opacity: .9;
+  font-size: .9rem;
+}
+
+.direction-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(79,108,247,0.45);
+  box-shadow: 0 18px 45px rgba(79,108,247,0.18);
+}
+
+.direction-card:hover img{
+  transform: scale(1.07);
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  .directions-grid{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }
+}
+@media (max-width: 576px){
+  .directions-grid{ grid-template-columns: 1fr; }
+  .direction-card{ height: 160px; }
+}
+
+/* Dark mode compatibility */
+body[data-theme="dark"] .direction-card{
+  border-color: var(--border);
+}
+/* Direction page hero */
+.direction-hero{
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 22px;
+  align-items: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.direction-hero-right img{
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 992px){
+  .direction-hero{ grid-template-columns: 1fr; }
+  .direction-hero-right img{ height: 220px; }
+}
+
+body[data-theme="dark"] .direction-hero{
+  background: var(--surface);
+}
+/* Direction page: Visual block instead of image */
+.dir-visual{
+  width: 100%;
+  height: 280px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(220px 220px at 25% 25%, rgba(79,108,247,0.35), transparent 60%),
+    radial-gradient(260px 260px at 80% 35%, rgba(124,145,255,0.28), transparent 60%),
+    linear-gradient(135deg, rgba(79,108,247,0.15), rgba(255,255,255,0.0));
+}
+
+.dir-visual-inner{
+  text-align: center;
+  padding: 18px;
+}
+
+#dirIcon{
+  font-size: 54px;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.dir-visual-text{
+  font-weight: 800;
+  color: var(--text);
+  opacity: 0.95;
+  max-width: 320px;
+  margin: 0 auto;
+  line-height: 1.2;
+}
+
+/* Dark mode */
+body[data-theme="dark"] .dir-visual{
+  background:
+    radial-gradient(240px 240px at 25% 25%, rgba(79,108,247,0.35), transparent 60%),
+    radial-gradient(280px 280px at 80% 35%, rgba(124,145,255,0.25), transparent 60%),
+    linear-gradient(135deg, rgba(15,23,42,0.65), rgba(11,18,32,0.85));
+}
+
+@media (max-width: 992px){
+  .dir-visual{ height: 220px; }
+}
+/* ===== Direction Pro Page ===== */
+.direction-pro-header{
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.dir-title{
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.dir-icon{
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: var(--secondary);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  flex: 0 0 auto;
+}
+
+.dir-icon i{ font-size: 22px; }
+
+.dir-metrics{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(170px, 1fr));
+  gap: 10px;
+  width: 100%;
+  max-width: 560px;
+}
+
+.dir-metric{
+  background: rgba(79,108,247,0.08);
+  border: 1px solid rgba(79,108,247,0.14);
+  border-radius: 16px;
+  padding: 12px 12px;
+}
+
+.dir-metric .k{
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.dir-metric .v{
+  display: block;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.dir-grid{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.dir-grid .full-span{
+  grid-column: 1 / -1;
+}
+
+.dir-roadmap{
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.dir-bullets{
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+@media (max-width: 992px){
+  .direction-pro-header{
+    flex-direction: column;
+  }
+  .dir-metrics{
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .dir-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark mode */
+body[data-theme="dark"] .direction-pro-header{
+  background: var(--surface);
+  border-color: var(--border);
+}
+body[data-theme="dark"] .dir-metric{
+  background: rgba(79,108,247,0.12);
+  border-color: rgba(79,108,247,0.18);
+}
+/* =========================
+   TOP UNIVERSITIES V2
+   ========================= */
+.topunis-v2{
+  position: relative;
+}
+
+.topunis-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.topuni-card{
+  display: block;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--white);
+  box-shadow: var(--shadow);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.topuni-card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(79,108,247,0.45);
+  box-shadow: 0 20px 55px rgba(79,108,247,0.18);
+}
+
+.topuni-media{
+  position: relative;
+  height: 160px;
+  background: #0b1220;
+}
+
+.topuni-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: transform .35s ease;
+}
+
+.topuni-card:hover .topuni-media img{
+  transform: scale(1.07);
+}
+
+.topuni-gradient{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.68) 100%);
+}
+
+.topuni-badge{
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  background: rgba(79,108,247,0.95);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: .2px;
+}
+
+.topuni-body{
+  padding: 16px 16px 18px;
+}
+
+.topuni-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.topuni-head h3{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.topuni-rating{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(234, 88, 12, 0.10);
+  color: #ea580c;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.topuni-desc{
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  min-height: 44px;
+}
+
+.topuni-meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.topuni-meta span{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--secondary);
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 12px;
+  border: 1px solid rgba(79,108,247,0.14);
+}
+
+.topuni-meta i{
+  opacity: .95;
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  .topunis-grid{ grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+}
+@media (max-width: 576px){
+  .topunis-grid{ grid-template-columns: 1fr; }
+  .topuni-media{ height: 170px; }
+}
+
+/* Dark mode */
+body[data-theme="dark"] .topuni-card{
+  background: var(--surface);
+  border-color: var(--border);
+}
+body[data-theme="dark"] .topuni-head h3{
+  color: var(--text);
+}
+body[data-theme="dark"] .topuni-desc{
+  color: rgba(229,231,235,0.78);
+}
+body[data-theme="dark"] .topuni-meta span{
+  background: rgba(79,108,247,0.14);
+  border-color: rgba(79,108,247,0.22);
+  color: #c7d2fe;
+}
+/* =========================
+   TOP UNIVERSITIES V2
+   ========================= */
+.topunis-v2{
+  position: relative;
+}
+
+.topunis-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.topuni-card{
+  display: block;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--white);
+  box-shadow: var(--shadow);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.topuni-card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(79,108,247,0.45);
+  box-shadow: 0 20px 55px rgba(79,108,247,0.18);
+}
+
+.topuni-media{
+  position: relative;
+  height: 160px;
+  background: #0b1220;
+}
+
+.topuni-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: transform .35s ease;
+}
+
+.topuni-card:hover .topuni-media img{
+  transform: scale(1.07);
+}
+
+.topuni-gradient{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.68) 100%);
+}
+
+.topuni-badge{
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  background: rgba(79,108,247,0.95);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: .2px;
+}
+
+.topuni-body{
+  padding: 16px 16px 18px;
+}
+
+.topuni-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.topuni-head h3{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.topuni-rating{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(234, 88, 12, 0.10);
+  color: #ea580c;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.topuni-desc{
+  margin: 0 0 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  min-height: 44px;
+}
+
+.topuni-meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.topuni-meta span{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--secondary);
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 12px;
+  border: 1px solid rgba(79,108,247,0.14);
+}
+
+.topuni-meta i{
+  opacity: .95;
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  .topunis-grid{ grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+}
+@media (max-width: 576px){
+  .topunis-grid{ grid-template-columns: 1fr; }
+  .topuni-media{ height: 170px; }
+}
+
+/* Dark mode */
+body[data-theme="dark"] .topuni-card{
+  background: var(--surface);
+  border-color: var(--border);
+}
+body[data-theme="dark"] .topuni-head h3{
+  color: var(--text);
+}
+body[data-theme="dark"] .topuni-desc{
+  color: rgba(229,231,235,0.78);
+}
+body[data-theme="dark"] .topuni-meta span{
+  background: rgba(79,108,247,0.14);
+  border-color: rgba(79,108,247,0.22);
+  color: #c7d2fe;
+}
+/* =========================
+   TOP UNIVERSITIES — Minimal (Override)
+   style.css ең соңына қойыңыз
+   ========================= */
+
+.topunis-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.topuni-card{
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.topuni-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(79,108,247,0.35);
+  box-shadow: 0 18px 45px rgba(79,108,247,0.12);
+}
+
+/* Фото — минимал: grayscale, hover кезде color */
+.topuni-media{
+  position: relative;
+  height: 120px;              /* бұрынғыдан қысқа */
+  background: #0b1220;
+}
+
+.topuni-media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(1) contrast(1.05) brightness(0.92);
+  transform: scale(1.02);
+  transition: filter .25s ease, transform .25s ease;
+}
+
+.topuni-card:hover .topuni-media img{
+  filter: grayscale(0) contrast(1.05) brightness(1);
+  transform: scale(1.05);
+}
+
+/* Gradient overlay-ды алып тастаймыз (минимализм) */
+.topuni-gradient{ display: none !important; }
+
+/* Card body */
+.topuni-body{
+  padding: 14px 16px 16px;
+}
+
+.topuni-head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.topuni-head h3{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  color: var(--text);
+}
+
+.topuni-rating{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--muted);
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.topuni-rating i{ color: #f59e0b; }
+
+/* Тек бір абзац — қысқа */
+.topuni-desc{
+  margin: 0 0 10px;
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 0.95rem;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  line-clamp: 2;      /* ✅ осыны қосыңыз (warning кетеді) */
+  overflow: hidden;
+}
+
+/* Meta line (chip емес) */
+.topuni-meta-line{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.topuni-meta-line i{
+  color: rgba(79,108,247,0.95);
+  margin-right: 6px;
+}
+
+.topuni-meta-line .dot{
+  opacity: 0.5;
+}
+
+/* Badge-ті минимал стильде жасыруға болады */
+.topuni-badge{ display: none; }
+
+/* Responsive */
+@media (max-width: 992px){
+  .topunis-grid{ grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+}
+@media (max-width: 576px){
+  .topunis-grid{ grid-template-columns: 1fr; }
+  .topuni-media{ height: 140px; }
+}
+
+/* Dark mode */
+body[data-theme="dark"] .topuni-card{
+  background: var(--surface);
+  border-color: var(--border);
+  box-shadow: 0 18px 55px rgba(0,0,0,0.35);
+}
+body[data-theme="dark"] .topuni-head h3{ color: var(--text); }
+body[data-theme="dark"] .topuni-desc,
+body[data-theme="dark"] .topuni-meta-line{
+  color: rgba(229,231,235,0.78);
+}
+/* ===== Top Universities Gallery ===== */
+.topuni-gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.topuni-tile{
+  position: relative;
+  height: 220px;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display: block;
+  background: #0b1220;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.topuni-tile img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display:block;
+  transform: scale(1.02);
+  transition: transform .35s ease;
+}
+
+.topuni-overlay{
+  position:absolute;
+  inset:0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.75) 100%);
+}
+
+.topuni-caption{
+  position:absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  color: #fff;
+  display:flex;
+  align-items:flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topuni-caption h3{
+  margin:0;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+}
+
+.topuni-caption span{
+  opacity: .9;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.topuni-tile:hover{
+  transform: translateY(-8px);
+  border-color: rgba(79,108,247,0.45);
+  box-shadow: 0 26px 65px rgba(79,108,247,0.18);
+}
+.topuni-tile:hover img{
+  transform: scale(1.08);
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  .topuni-gallery-grid{ grid-template-columns: repeat(2, minmax(240px, 1fr)); }
+}
+@media (max-width: 576px){
+  .topuni-gallery-grid{ grid-template-columns: 1fr; }
+  .topuni-tile{ height: 240px; }
+}
+/* ===== University detail page ===== */
+.uni-page-hero{
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.uni-page-photo img{
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display:block;
+}
+
+.uni-page-info h1{
+  margin: 0 0 8px;
+  font-size: 2rem;
+  letter-spacing: -0.4px;
+}
+
+.uni-page-badges{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin: 12px 0;
+}
+
+.uni-page-badge{
+  background: var(--secondary);
+  color: var(--primary);
+  border: 1px solid rgba(79,108,247,0.14);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.uni-page-stats{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.uni-page-stat{
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 12px 12px;
+  box-shadow: var(--shadow);
+}
+
+.uni-page-stat .k{
+  display:block;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.uni-page-stat .v{
+  display:block;
+  font-weight: 900;
+  color: var(--text);
+}
+
+@media (max-width: 992px){
+  .uni-page-hero{ grid-template-columns: 1fr; }
+  .uni-page-photo img{ height: 240px; }
+}
+
+body[data-theme="dark"] .uni-page-stat{
+  background: var(--surface);
+}
+/* =========================
+   FIX: Universities cards text invisible in LIGHT mode
+   ========================= */
+body:not([data-theme="dark"]) .uni-card{
+  background: #fff !important;
+  color: var(--text) !important; /* жалпы мәтін түсі */
+}
+
+body:not([data-theme="dark"]) .uni-card .uni-location,
+body:not([data-theme="dark"]) .uni-card .uni-description,
+body:not([data-theme="dark"]) .uni-card .uni-info{
+  color: var(--muted) !important; /* сипаттама/қала/инфо */
+}
+
+body:not([data-theme="dark"]) .uni-card .uni-info strong,
+body:not([data-theme="dark"]) .uni-card h3{
+  color: var(--text) !important; /* тақырып және bold сөздер */
+}
+.hero-slogan{
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.2px;
+}
+.hero-illustration p{
+  color: rgba(0,0,0,0.85); /* қою қара */
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.hero-illustration p{
+  color: #000;
+  font-weight: 700;
+  font-size: 1.05rem;
+}

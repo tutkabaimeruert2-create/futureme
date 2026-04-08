@@ -1,0 +1,110 @@
+/* ===========================
+   THEME V2 — Global Redesign
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root{
+  --bg: #f6f8ff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #4f6cf7;
+  --primary-dark: #3d57d6;
+  --border: rgba(15, 23, 42, 0.08);
+  --surface: rgba(255,255,255,0.85);
+  --surface-solid: #ffffff;
+  --shadow: 0 18px 55px rgba(15, 23, 42, 0.10);
+  --radius: 20px;
+}
+
+body{
+  font-family: Inter, Arial, sans-serif !important;
+  background: radial-gradient(1000px 600px at 20% 0%, rgba(79,108,247,.12), transparent 55%),
+              radial-gradient(1000px 600px at 80% 10%, rgba(124,145,255,.12), transparent 55%),
+              var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* Navbar */
+.navbar{
+  background: rgba(255,255,255,0.70) !important;
+  border-bottom: 1px solid var(--border);
+  box-shadow: none !important;
+  backdrop-filter: blur(10px);
+}
+.logo{ font-weight: 800 !important; letter-spacing: -0.3px; }
+.nav-links a{ color: rgba(15,23,42,.8) !important; }
+.nav-links a.active, .nav-links a:hover{ color: var(--primary) !important; }
+
+/* Buttons */
+.btn{
+  border-radius: 14px !important;
+  box-shadow: none !important;
+}
+.btn-primary{
+  background: linear-gradient(135deg, var(--primary), #7c91ff) !important;
+  border: none !important;
+}
+.btn-primary:hover{ transform: translateY(-1px); }
+.btn-outline{
+  border-color: rgba(79,108,247,.55) !important;
+  color: var(--primary) !important;
+  background: transparent !important;
+}
+.btn-outline:hover{
+  background: rgba(79,108,247,.10) !important;
+}
+
+/* Sections / cards general */
+.feature-card, .step-card, .university-card, .testimonial-card, .faq-item,
+.profile-card, .uni-card, .major-card, .filter-card, .filter-panel, .modal-content,
+.chat-container, .admin-section, .result-box, .question-box{
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Headings */
+.section-header h1, .section-header h2{
+  letter-spacing: -0.7px;
+}
+
+/* Inputs */
+input, select, textarea{
+  border-radius: 14px !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* University cards small improvements */
+.uni-rating{
+  background: rgba(234, 88, 12, 0.08) !important;
+  color: #ea580c !important;
+}
+
+/* Profile saved cards layout stays clean */
+#savedUniversitiesList{ gap: 18px !important; }
+.profile-saved-card{ padding: 18px !important; }
+
+/* Dark mode compatibility (сіздің dark mode сақталсын) */
+body[data-theme="dark"]{
+  --bg: #0b1220;
+  --text: #e5e7eb;
+  --muted: rgba(229,231,235,.75);
+  --border: rgba(255,255,255,.10);
+  --surface: rgba(15,23,42,0.70);
+  --surface-solid: #0f172a;
+  --shadow: 0 20px 65px rgba(0,0,0,0.45);
+}
+
+body[data-theme="dark"]{
+  background: radial-gradient(900px 520px at 20% 0%, rgba(79,108,247,.20), transparent 55%),
+              radial-gradient(900px 520px at 80% 10%, rgba(124,145,255,.18), transparent 55%),
+              var(--bg) !important;
+}
+body[data-theme="dark"] .navbar{
+  background: rgba(15,23,42,0.65) !important;
+}
+body[data-theme="dark"] .nav-links a{ color: rgba(229,231,235,.88) !important; }
+body[data-theme="dark"] p{ color: var(--muted) !important; }

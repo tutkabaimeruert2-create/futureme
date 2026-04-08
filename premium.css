@@ -1,0 +1,480 @@
+/* =========================
+   Premium / Apple-style UI
+   ========================= */
+
+/* Палитра */
+:root{
+  --p-bg1: #020617;
+  --p-bg2: #0f172a;
+  --p-primary: #3B82F6;
+  --p-accent: #F59E0B;
+
+  --p-card: rgba(15, 23, 42, 0.55);
+  --p-border: rgba(255,255,255,0.10);
+  --p-text: rgba(255,255,255,0.92);
+  --p-muted: rgba(255,255,255,0.68);
+
+  --p-shadow: 0 18px 60px rgba(0,0,0,0.45);
+  --p-radius: 22px;
+}
+
+/* Dark default look (тек dark theme кезінде) */
+body[data-theme="dark"]{
+  background: linear-gradient(135deg, var(--p-bg2), var(--p-bg1)) !important;
+  color: var(--p-text) !important;
+}
+
+/* Үлкен whitespace + контейнер көрінісі */
+body[data-theme="dark"] .section{
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* Glass card базасы (барлық бетке) */
+body[data-theme="dark"] .feature-card,
+body[data-theme="dark"] .step-card,
+body[data-theme="dark"] .university-card,
+body[data-theme="dark"] .testimonial-card,
+body[data-theme="dark"] .faq-item,
+body[data-theme="dark"] .profile-card,
+body[data-theme="dark"] .major-card,
+body[data-theme="dark"] .filter-card,
+body[data-theme="dark"] .filter-panel,
+body[data-theme="dark"] .uni-card,
+body[data-theme="dark"] .modal-content,
+body[data-theme="dark"] .compare-panel{
+  background: var(--p-card) !important;
+  border: 1px solid var(--p-border) !important;
+  box-shadow: var(--p-shadow) !important;
+  border-radius: var(--p-radius) !important;
+  backdrop-filter: blur(14px);
+}
+
+/* Navbar glass */
+body[data-theme="dark"] .navbar{
+  background: rgba(2,6,23,0.55) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: none !important;
+  backdrop-filter: blur(14px);
+}
+body[data-theme="dark"] .nav-links a{ color: rgba(255,255,255,0.78) !important; }
+body[data-theme="dark"] .nav-links a.active,
+body[data-theme="dark"] .nav-links a:hover{ color: #fff !important; }
+
+/* HERO секцияларды күшейту (университеттер/мамандықтар hero) */
+body[data-theme="dark"] .universities-hero,
+body[data-theme="dark"] .majors-hero{
+  background: transparent !important;
+}
+
+/* Section header мәтін контраст */
+body[data-theme="dark"] .section-header h1,
+body[data-theme="dark"] .section-header h2{
+  color: #fff !important;
+  letter-spacing: -0.6px;
+}
+body[data-theme="dark"] .section-header p{
+  color: var(--p-muted) !important;
+}
+
+/* Buttons – premium */
+body[data-theme="dark"] .btn-primary{
+  background: linear-gradient(135deg, var(--p-primary), #7c91ff) !important;
+  border: none !important;
+}
+body[data-theme="dark"] .btn-outline{
+  background: rgba(255,255,255,0.03) !important;
+  border: 1px solid rgba(255,255,255,0.14) !important;
+  color: rgba(255,255,255,0.85) !important;
+}
+body[data-theme="dark"] .btn:active{ transform: scale(0.98); }
+
+/* ======================================================
+   UNIVERSITIES: SMART FILTER UI (glass + clean)
+   ====================================================== */
+body[data-theme="dark"] .filter-card,
+body[data-theme="dark"] .filter-panel{
+  box-shadow: 0 25px 80px rgba(0,0,0,0.55) !important;
+}
+
+body[data-theme="dark"] input,
+body[data-theme="dark"] select{
+  background: rgba(2,6,23,0.45) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  color: rgba(255,255,255,0.92) !important;
+}
+body[data-theme="dark"] input::placeholder{
+  color: rgba(255,255,255,0.45) !important;
+}
+
+/* ======================================================
+   UNIVERSITY CARD – WOW (hover glow + gradient sweep)
+   Бұл стиль universities.js жаңа карточка HTML-ына арналған
+   ====================================================== */
+
+.uni-card.premium-uni{
+  position: relative;
+  overflow: hidden;
+}
+
+/* ішінен жарық өтетін эффект */
+.uni-card.premium-uni::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: radial-gradient(600px 140px at 20% 10%, rgba(59,130,246,0.35), transparent 60%),
+              radial-gradient(600px 160px at 80% 30%, rgba(245,158,11,0.18), transparent 60%);
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events:none;
+}
+
+.uni-card.premium-uni::after{
+  content:"";
+  position:absolute;
+  top:-40%;
+  left:-60%;
+  width: 180%;
+  height: 180%;
+  background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,0.10) 50%, transparent 65%);
+  transform: rotate(10deg);
+  opacity: 0;
+  transition: opacity .25s ease, transform .35s ease;
+  pointer-events:none;
+}
+
+.uni-card.premium-uni:hover{
+  transform: translateY(-10px) scale(1.03);
+  border-color: rgba(255,255,255,0.18) !important;
+  box-shadow: 0 30px 90px rgba(59,130,246,0.20) !important;
+}
+.uni-card.premium-uni:hover::before{ opacity: 1; }
+.uni-card.premium-uni:hover::after{
+  opacity: 1;
+  transform: translateX(20%) rotate(10deg);
+}
+
+/* Avatar/logo */
+.puni-top{
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items:flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.puni-left{
+  display:flex;
+  gap: 12px;
+  align-items:flex-start;
+}
+
+.puni-avatar{
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex: 0 0 auto;
+  overflow:hidden;
+}
+
+.puni-avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: transparent;
+  display:block;
+}
+
+.puni-avatar span{
+  font-weight: 900;
+  color: rgba(255,255,255,0.85);
+}
+
+/* Title + location */
+.puni-title{
+  margin: 0 0 6px 0;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+}
+.puni-loc{
+  margin: 0;
+  color: var(--p-muted);
+  font-size: 0.95rem;
+}
+
+/* Rating “ерекше”: gold gradient + progress */
+.puni-rating{
+  min-width: 110px;
+  text-align: right;
+}
+
+.puni-score{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.92);
+}
+
+.puni-score i{
+  background: linear-gradient(135deg, #FDE68A, #F59E0B);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.puni-bar{
+  margin-top: 8px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  overflow:hidden;
+}
+.puni-bar span{
+  display:block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #F59E0B, #FDE68A);
+  border-radius: 999px;
+}
+
+/* description */
+.puni-desc{
+  margin: 14px 0 14px;
+  color: var(--p-muted);
+  line-height: 1.55;
+  position: relative;
+  z-index: 1;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+/* Stats */
+.puni-stats{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.puni-stat{
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 10px 12px;
+}
+.puni-stat .k{
+  display:block;
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.puni-stat .v{
+  display:block;
+  font-weight: 900;
+  color: rgba(255,255,255,0.92);
+}
+
+/* tags */
+.puni-tags{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+  position: relative;
+  z-index: 1;
+}
+.puni-tag{
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(59,130,246,0.10);
+  border: 1px solid rgba(59,130,246,0.18);
+  color: rgba(199,210,254,0.95);
+  font-weight: 900;
+  font-size: 12px;
+}
+
+/* Actions сақталады (сіздің JS тыңдаушылары сол класстарға байланған) */
+.uni-actions{
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 992px){
+  .uni-card.premium-uni:hover{ transform: none; }
+}
+/* =========================================
+   FIX (must be AFTER premium styles)
+   Universities cards text invisible
+   ========================================= */
+
+/* 1) LIGHT MODE: ақ карточка + қара мәтін */
+body:not([data-theme="dark"]) .uni-card{
+  background: #ffffff !important;
+  color: #111827 !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+}
+
+body:not([data-theme="dark"]) .uni-card h3,
+body:not([data-theme="dark"]) .uni-card .puni-title{
+  color: #111827 !important;
+}
+
+body:not([data-theme="dark"]) .uni-card p,
+body:not([data-theme="dark"]) .uni-card .uni-location,
+body:not([data-theme="dark"]) .uni-card .uni-description,
+body:not([data-theme="dark"]) .uni-card .uni-info,
+body:not([data-theme="dark"]) .uni-card .puni-desc,
+body:not([data-theme="dark"]) .uni-card .puni-loc{
+  color: #6b7280 !important;
+}
+
+/* Premium карточкада light-та glow/overlay керек емес */
+body:not([data-theme="dark"]) .uni-card.premium-uni::before,
+body:not([data-theme="dark"]) .uni-card.premium-uni::after{
+  display: none !important;
+}
+
+/* 2) DARK MODE: карточка қара + мәтін ақ (дұрыс контраст) */
+body[data-theme="dark"] .uni-card{
+  background: rgba(15, 23, 42, 0.55) !important;
+  color: rgba(255,255,255,0.92) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+}
+
+body[data-theme="dark"] .uni-card p,
+body[data-theme="dark"] .uni-card .uni-location,
+body[data-theme="dark"] .uni-card .uni-description,
+body[data-theme="dark"] .uni-card .uni-info,
+body[data-theme="dark"] .uni-card .puni-desc,
+body[data-theme="dark"] .uni-card .puni-loc{
+  color: rgba(255,255,255,0.70) !important;
+}
+/* ==================================================
+   LIGHT MODE – Universities cards: clear text + WOW hover
+   (Dark режимді қозғамайды)
+   ================================================== */
+
+body:not([data-theme="dark"]) .universities-grid{
+  gap: 22px !important;
+}
+
+body:not([data-theme="dark"]) .uni-card{
+  position: relative !important;
+  overflow: hidden !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(17, 24, 39, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.08) !important;
+  border-radius: 22px !important;
+
+  /* Карточка ішін жинақы ету */
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+
+  transform: translateY(0) scale(1);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease !important;
+}
+
+/* Gradient “жарық” эффект (hover кезінде көрінеді) */
+body:not([data-theme="dark"]) .uni-card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:
+    radial-gradient(500px 140px at 15% 10%, rgba(79,108,247,0.22), transparent 60%),
+    radial-gradient(500px 160px at 85% 25%, rgba(245,158,11,0.18), transparent 60%);
+  opacity: 0;
+  transition: opacity .22s ease;
+  pointer-events:none;
+}
+
+body:not([data-theme="dark"]) .uni-card:hover{
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(79,108,247,0.28) !important;
+  box-shadow: 0 26px 70px rgba(79,108,247,0.14) !important;
+}
+
+body:not([data-theme="dark"]) .uni-card:hover::before{
+  opacity: 1;
+}
+
+body:not([data-theme="dark"]) .uni-card:active{
+  transform: translateY(-6px) scale(1.01);
+}
+
+/* Тақырып пен мәтін контрастын күшейту */
+body:not([data-theme="dark"]) .uni-card h3{
+  color: #0f172a !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.2px;
+  margin-bottom: 4px !important;
+}
+
+body:not([data-theme="dark"]) .uni-location{
+  color: #475569 !important;
+  font-weight: 700;
+}
+
+body:not([data-theme="dark"]) .uni-description{
+  color: #64748b !important;
+  margin-bottom: 0 !important;
+
+  /* Артық ұзын мәтінді әдемі қысқарту */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+
+  /* Бұрынғы min-height болса — алып тастаймыз */
+  min-height: unset !important;
+}
+
+/* Rating-ті әдемі pill қылу */
+body:not([data-theme="dark"]) .uni-rating{
+  background: rgba(245, 158, 11, 0.12) !important;
+  color: #b45309 !important;
+  border: 1px solid rgba(245, 158, 11, 0.18) !important;
+  font-weight: 900 !important;
+}
+
+/* Badge-терді таза минимал ету */
+body:not([data-theme="dark"]) .uni-badge{
+  background: rgba(79,108,247,0.10) !important;
+  color: #3658ff !important;
+  border: 1px solid rgba(79,108,247,0.14) !important;
+}
+body:not([data-theme="dark"]) .uni-badge.light{
+  background: rgba(15,23,42,0.04) !important;
+  color: #334155 !important;
+  border: 1px solid rgba(15,23,42,0.08) !important;
+}
+
+/* Карточка ішіндегі info мәтіні анық болсын */
+body:not([data-theme="dark"]) .uni-info{
+  color: #475569 !important;
+}
+body:not([data-theme="dark"]) .uni-info strong{
+  color: #0f172a !important;
+}
+
+/* Батырмалар арасы әдемі */
+body:not([data-theme="dark"]) .uni-actions{
+  margin-top: 6px !important;
+  gap: 12px !important;
+}

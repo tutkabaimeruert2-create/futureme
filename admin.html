@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <link rel="stylesheet" href="premium.css" />
+    <!-- AOS (Animate On Scroll) Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - FutureMe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+  <link rel="stylesheet" href="ui-pro.css" />
+  <link rel="stylesheet" href="mobile-fix.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="container" style="padding: 40px 0;">
+    <div id="adminPage">
+      <div class="profile-header">
+        <h1>Admin Panel</h1>
+      </div>
+
+      <!-- Dashboard -->
+      <div class="admin-grid">
+        <div class="stat-card">
+          <h3 id="usersCount">0</h3>
+          <p>Қолданушылар</p>
+        </div>
+        <div class="stat-card">
+          <h3 id="universitiesCountAdmin">0</h3>
+          <p>Университеттер</p>
+        </div>
+        <div class="stat-card">
+          <h3 id="majorsCount">0</h3>
+          <p>Мамандықтар</p>
+        </div>
+      </div>
+
+      <!-- Университеттерді басқару -->
+      <div class="admin-section">
+        <h2>Университеттерді басқару</h2>
+        <button id="addUniBtn" class="btn btn-primary">Жаңа университет қосу</button>
+        <div id="uniList" class="admin-list"></div>
+      </div>
+
+      <!-- Мамандықтарды басқару -->
+      <div class="admin-section">
+        <h2>Мамандықтарды басқару</h2>
+        <button id="addMajorBtn" class="btn btn-primary">Жаңа мамандық қосу</button>
+        <div id="majorList" class="admin-list"></div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Modal -->
+  <div id="adminModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="script.js"></script>
+  <script src="admin.js"></script>
+  <script src="auth.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Анимация ұзақтығы
+    once: true,    // Анимация бір рет қана орындалады
+  });
+</script>
+</body>
+</html>

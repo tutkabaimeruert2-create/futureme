@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <link rel="stylesheet" href="premium.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Бағыт туралы - FutureMe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="ui-pro.css" />
+  <link rel="stylesheet" href="mobile-fix.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="section">
+    <div class="container">
+
+      <!-- HERO / HEADER -->
+      <section class="direction-pro-header">
+        <div class="dir-title">
+          <div class="dir-icon" aria-hidden="true"><i id="dirIcon" class="fas fa-layer-group"></i></div>
+          <div>
+            <h1 id="dirTitle">Бағыт</h1>
+            <p id="dirSubtitle" class="muted">...</p>
+          </div>
+        </div>
+
+        <div class="dir-metrics" id="dirMetrics">
+          <!-- JS толтырады -->
+        </div>
+      </section>
+
+      <!-- MAIN GRID -->
+      <section class="dir-grid">
+        <div class="feature-card">
+          <h3>Сипаттама</h3>
+          <p id="dirDescription" class="muted"></p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Кімге лайық?</h3>
+          <div id="dirTraits" class="recommended-list"></div>
+        </div>
+
+        <div class="feature-card">
+          <h3>Қандай пәндер керек?</h3>
+          <div id="dirSubjects" class="recommended-list"></div>
+        </div>
+
+        <div class="feature-card full-span">
+          <h3>Даму жолы (Roadmap)</h3>
+          <ol id="dirRoadmap" class="dir-roadmap"></ol>
+        </div>
+
+        <div class="feature-card">
+          <h3>Қажетті дағдылар</h3>
+          <div id="dirSkills" class="recommended-list"></div>
+        </div>
+
+        <div class="feature-card">
+          <h3>Мысал мамандықтар</h3>
+          <div id="dirJobs" class="recommended-list"></div>
+        </div>
+
+        <div class="feature-card">
+          <h3>Құралдар / технологиялар</h3>
+          <div id="dirTools" class="recommended-list"></div>
+          <p class="muted" style="margin-top:10px; font-size: 0.95rem;">
+            Ескерту: бұл тізім бағытқа қарай өзгеріп отырады.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Артықшылықтары</h3>
+          <ul id="dirPros" class="dir-bullets"></ul>
+        </div>
+
+        <div class="feature-card">
+          <h3>Қиындықтары</h3>
+          <ul id="dirCons" class="dir-bullets"></ul>
+        </div>
+      </section>
+
+      <div style="margin-top:22px;">
+        <a href="index.html" class="btn btn-outline">← Басты бетке</a>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="script.js"></script>
+  <script src="direction.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <link rel="stylesheet" href="premium.css" />
+  <!-- AOS (Animate On Scroll) Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тест - FutureMe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+  <link rel="stylesheet" href="ui-pro.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="mobile-fix.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="container" style="padding: 40px 0;">
+    <div class="box test-page">
+      <div class="section-header" style="margin-bottom: 24px;">
+        <h1>Қабілет пен қызығушылық тесті</h1>
+        <p>
+          Сұрақтарға жауап беріп, өзіңізге сай мамандық бағыттарын анықтаңыз.
+        </p>
+      </div>
+
+      <div id="testIntro">
+        <div class="card-lite">
+          <h3>Тест туралы</h3>
+          <p class="muted">
+            Бұл тест сіздің қызығушылықтарыңыз бен қабілеттеріңізге қарап,
+            қандай сала сізге жақын екенін анықтауға көмектеседі.
+          </p>
+          <button id="startTestBtn" class="btn btn-primary" style="margin-top: 16px;">
+            Тестті бастау
+          </button>
+        </div>
+      </div>
+
+      <div id="testContainer" style="display: none;">
+        <div class="progress-wrap">
+          <div class="progress-top">
+            <span id="questionCounter">1 / 10</span>
+            <span id="progressPercent">10%</span>
+          </div>
+          <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+        </div>
+
+        <div class="question-box">
+          <h2 id="questionText">Сұрақ мәтіні</h2>
+          <div id="answersList" class="answers-list"></div>
+        </div>
+
+        <div class="test-actions">
+          <button id="prevBtn" class="btn btn-outline" type="button">Артқа</button>
+        </div>
+      </div>
+
+      <div id="resultContainer" style="display: none;">
+        <div class="result-box">
+          <h2>Сіздің нәтижеңіз</h2>
+          <p id="resultDescription" class="muted"></p>
+
+          <div id="scoreCards" class="grid grid-4" style="margin-top: 20px;"></div>
+
+          <div style="margin-top: 24px;">
+            <h3>Сізге ұсынылатын мамандықтар:</h3>
+            <div id="recommendedMajors" class="recommended-list"></div>
+          </div>
+
+          <div class="hero-buttons" style="margin-top: 24px;">
+            <a href="universities.html" class="btn btn-primary">Университеттерді қарау</a>
+            <button id="restartTestBtn" class="btn btn-outline" type="button">Қайта тапсыру</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="script.js"></script>
+  <script src="test.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Анимация ұзақтығы
+    once: true,    // Анимация бір рет қана орындалады
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <link rel="stylesheet" href="premium.css" />
+    <!-- AOS (Animate On Scroll) Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мамандықтар каталогы - FutureMe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+  <link rel="stylesheet" href="ui-pro.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="mobile-fix.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main>
+    <section class="majors-hero">
+      <div class="container">
+        <div class="section-header">
+          <h1>Мамандықтар каталогы</h1>
+          <p>Өзіңізге сай мамандықты тауып, ол туралы толық ақпарат алыңыз.</p>
+        </div>
+
+        <div class="filter-panel">
+          <input type="text" id="searchInput" placeholder="Мамандық атын іздеу..." />
+         <select id="categoryFilter">
+            <option value="">Барлық категориялар</option>
+            <option value="IT">IT</option>
+            <option value="Медицина">Медицина</option>
+            <option value="Бизнес">Бизнес</option>
+            <option value="Инженерия">Инженерия</option>
+            <option value="Педагогика">Педагогика</option>
+            <option value="Өнер">Өнер</option>
+            <option value="Құқық">Құқық</option>
+            <option value="Гуманитарлық">Гуманитарлық</option>
+         </select>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 40px;">
+      <div class="container">
+        <div id="majorsGrid" class="majors-grid">
+          <!-- Мамандық карточкалары осында шығады -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="majorModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="script.js"></script>
+  <script src="majors.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Анимация ұзақтығы
+    once: true,    // Анимация бір рет қана орындалады
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+/* =========================================
+   MOBILE FIX (safe for all pages)
+   ========================================= */
+
+/* 1) Horizontal overflow болмайды */
+html, body{
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 2) iOS үшін blur */
+.feature-card, .step-card, .university-card, .testimonial-card, .faq-item,
+.profile-card, .major-card, .uni-card, .filter-card, .filter-panel,
+.modal-content, .chat-container, .admin-section, .result-box, .question-box,
+.saved-uni-card, .profile-saved-card, .box, .card-lite{
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+/* 3) Mobile performance: кішкентай экранда blur/көлеңкені жеңілдету */
+@media (max-width: 768px){
+  .feature-card, .step-card, .university-card, .testimonial-card, .faq-item,
+  .profile-card, .major-card, .uni-card, .filter-card, .filter-panel,
+  .modal-content, .chat-container, .admin-section, .result-box, .question-box{
+    box-shadow: 0 10px 24px rgba(0,0,0,0.10) !important;
+  }
+
+  .section{
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+}
+
+/* 4) Touch құрылғыда hover “жабысып қалмасын”
+   (батырмалар басылмай қалу проблемасын да шешеді) */
+@media (hover: none) and (pointer: coarse){
+  .feature-card:hover, .step-card:hover, .university-card:hover, .testimonial-card:hover, .faq-item:hover,
+  .profile-card:hover, .major-card:hover, .uni-card:hover, .filter-card:hover, .filter-panel:hover,
+  .saved-uni-card:hover, .profile-saved-card:hover, .box:hover, .card-lite:hover{
+    transform: none !important;
+  }
+
+  .feature-card::before, .feature-card::after,
+  .profile-card::before, .profile-card::after,
+  .major-card::before, .major-card::after,
+  .uni-card::before, .uni-card::after,
+  .filter-card::before, .filter-card::after,
+  .filter-panel::before, .filter-panel::after{
+    display: none !important;
+  }
+}
+
+/* 5) Navbar mobile dropdown — толық экранға сыйсын */
+@media (max-width: 992px){
+  .nav-links.show{
+    display: flex !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 78px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 5%;
+    z-index: 2000;
+  }
+}
+
+/* 6) Menu ашық кезде body scroll тоқтату (JS class қосады) */
+body.menu-open{
+  overflow: hidden;
+}
+
+/* 7) Modal mobile-friendly */
+@media (max-width: 768px){
+  .modal-content{
+    max-height: 85dvh;
+    overflow: auto;
+  }
+}

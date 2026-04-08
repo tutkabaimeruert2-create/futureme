@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <link rel="stylesheet" href="premium.css" />
+  <!-- AOS (Animate On Scroll) Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кіру - FutureMe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+  <link rel="stylesheet" href="ui-pro.css" />
+  <link rel="stylesheet" href="mobile-fix.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="container" style="padding: 40px 0;">
+    <div class="box" style="max-width: 520px; margin: 0 auto;">
+      <h1 style="margin-bottom: 10px;">Кіру</h1>
+      <p class="muted" style="margin-bottom: 18px;">FutureMe-ге өз есептік жазбаңызбен кіріңіз.</p>
+
+      <form id="loginForm" class="form">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="example@gmail.com" required />
+
+        <label>Пароль</label>
+        <input type="password" name="password" placeholder="Құпия сөз" required />
+
+        <button class="btn btn-primary" type="submit">Кіру</button>
+
+        <div id="authMessage" class="auth-message"></div>
+
+        <p class="muted" style="margin-top: 14px;">
+          Аккаунт жоқ па?
+          <a href="register.html" style="color: var(--primary); font-weight: 700;">Тіркелу</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Анимация ұзақтығы
+    once: true,    // Анимация бір рет қана орындалады
+  });
+</script>
+</body>
+</html>

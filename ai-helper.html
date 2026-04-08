@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <link rel="stylesheet" href="premium.css" />
+        <!-- Instant redirect -->
+    <meta http-equiv="refresh" content="0; url=https://chatgpt.com/" />
+
+    <script>
+    // Meta refresh жұмыс істемей қалса — fallback:
+    window.location.replace("https://chatgpt.com/");
+    </script>
+    <!-- AOS (Animate On Scroll) Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Кеңесші - FutureMe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-v2.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="ui-pro.css" />
+  <link rel="stylesheet" href="mobile-fix.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="container" style="padding: 40px 0;">
+    <div class="ai-helper-page">
+      <div class="section-header">
+        <h1>AI Кеңесші</h1>
+        <p>Болашақ мамандығыңыз туралы сұрақтарыңызға жауап алыңыз.</p>
+      </div>
+
+      <!-- Чат терезесі -->
+      <div class="chat-container">
+        <div id="chatBox" class="chat-box">
+          <!-- Хабарламалар осында шығады -->
+        </div>
+
+        <!-- Дайын сұрақтар -->
+        <div id="quickPrompts" class="quick-prompts">
+          <button class="prompt-btn">Маған сай мамандықтарды ұсын</button>
+          <button class="prompt-btn">IT саласының болашағы қандай?</button>
+          <button class="prompt-btn">Медицина мамандығы кімге келеді?</button>
+          <button class="prompt-btn">Грантқа қалай түсуге болады?</button>
+        </div>
+        
+        <!-- Сұрақ жазу формасы -->
+        <form id="chatForm" class="chat-form">
+          <input type="text" id="userInput" placeholder="Сұрағыңызды жазыңыз..." autocomplete="off" required />
+          <button type="submit" class="send-btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="script.js"></script>
+  <script src="ai-helper.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800, // Анимация ұзақтығы
+    once: true,    // Анимация бір рет қана орындалады
+  });
+</script>
+</body>
+</html>

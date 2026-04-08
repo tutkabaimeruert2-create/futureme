@@ -1,0 +1,190 @@
+/* ==================================================
+   UNIVERSITIES FIX (Light mode PRO + WOW hover)
+   - Works for BOTH old (.uni-*) and premium (.puni-*) cards
+   - Dark mode untouched
+   ================================================== */
+
+/* ---------- LIGHT MODE ---------- */
+body:not([data-theme="dark"]) .universities-grid{
+  gap: 22px !important;
+}
+
+body:not([data-theme="dark"]) .uni-card{
+  position: relative !important;
+  overflow: hidden !important;
+
+  background: #ffffff !important;
+  border: 1px solid rgba(15,23,42,0.10) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 12px 34px rgba(15,23,42,0.08) !important;
+
+  transform: translateY(0) scale(1);
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease !important;
+}
+
+/* WOW glow + sweep */
+body:not([data-theme="dark"]) .uni-card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:
+    radial-gradient(520px 160px at 20% 10%, rgba(79,108,247,0.20), transparent 60%),
+    radial-gradient(520px 180px at 85% 30%, rgba(245,158,11,0.16), transparent 62%);
+  opacity: 0;
+  transition: opacity .22s ease;
+  pointer-events:none;
+}
+body:not([data-theme="dark"]) .uni-card::after{
+  content:"";
+  position:absolute;
+  top:-40%;
+  left:-60%;
+  width: 180%;
+  height: 180%;
+  background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,0.22) 50%, transparent 65%);
+  transform: rotate(10deg);
+  opacity: 0;
+  transition: opacity .22s ease, transform .35s ease;
+  pointer-events:none;
+}
+
+body:not([data-theme="dark"]) .uni-card:hover{
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(79,108,247,0.30) !important;
+  box-shadow: 0 28px 72px rgba(79,108,247,0.16) !important;
+}
+body:not([data-theme="dark"]) .uni-card:hover::before{ opacity: 1; }
+body:not([data-theme="dark"]) .uni-card:hover::after{
+  opacity: 1;
+  transform: translateX(22%) rotate(10deg);
+}
+
+/* --------- TEXT VISIBILITY (the main fix) --------- */
+/* Titles */
+body:not([data-theme="dark"]) .uni-card h3,
+body:not([data-theme="dark"]) .uni-card .puni-title{
+  color: #0f172a !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.2px;
+}
+
+/* Location + muted */
+body:not([data-theme="dark"]) .uni-card .uni-location,
+body:not([data-theme="dark"]) .uni-card .puni-loc,
+body:not([data-theme="dark"]) .uni-card .uni-description,
+body:not([data-theme="dark"]) .uni-card .puni-desc,
+body:not([data-theme="dark"]) .uni-card p{
+  color: #64748b !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* Clamp long descriptions (both styles) */
+body:not([data-theme="dark"]) .uni-card .uni-description,
+body:not([data-theme="dark"]) .uni-card .puni-desc{
+  min-height: unset !important;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+/* Info block (old layout) */
+body:not([data-theme="dark"]) .uni-card .uni-info,
+body:not([data-theme="dark"]) .uni-card .uni-info *{
+  color: #475569 !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+body:not([data-theme="dark"]) .uni-card .uni-info strong{
+  color: #0f172a !important;
+}
+
+/* Premium stats blocks (new layout) */
+body:not([data-theme="dark"]) .uni-card .puni-stat{
+  background: rgba(15,23,42,0.04) !important;
+  border: 1px solid rgba(15,23,42,0.08) !important;
+}
+body:not([data-theme="dark"]) .uni-card .puni-stat .k{
+  color: #64748b !important;
+}
+body:not([data-theme="dark"]) .uni-card .puni-stat .v{
+  color: #0f172a !important;
+  font-weight: 900 !important;
+}
+
+/* Tags (both layouts) */
+body:not([data-theme="dark"]) .uni-card .uni-badge{
+  background: rgba(79,108,247,0.10) !important;
+  color: #3658ff !important;
+  border: 1px solid rgba(79,108,247,0.15) !important;
+  opacity: 1 !important;
+}
+body:not([data-theme="dark"]) .uni-card .uni-badge.light{
+  background: rgba(15,23,42,0.05) !important;
+  color: #334155 !important;
+  border: 1px solid rgba(15,23,42,0.10) !important;
+  opacity: 1 !important;
+}
+body:not([data-theme="dark"]) .uni-card .puni-tag{
+  background: rgba(79,108,247,0.10) !important;
+  color: #3658ff !important;
+  border: 1px solid rgba(79,108,247,0.15) !important;
+}
+
+/* Rating pill (old) */
+body:not([data-theme="dark"]) .uni-card .uni-rating{
+  background: rgba(245,158,11,0.12) !important;
+  color: #b45309 !important;
+  border: 1px solid rgba(245,158,11,0.18) !important;
+  font-weight: 900 !important;
+}
+
+/* Rating bar (premium) */
+body:not([data-theme="dark"]) .uni-card .puni-bar{
+  background: rgba(15,23,42,0.10) !important;
+}
+body:not([data-theme="dark"]) .uni-card .puni-score{
+  color: #0f172a !important;
+}
+
+/* Avatar (premium) */
+body:not([data-theme="dark"]) .uni-card .puni-avatar{
+  background: rgba(15,23,42,0.04) !important;
+  border: 1px solid rgba(15,23,42,0.10) !important;
+}
+body:not([data-theme="dark"]) .uni-card .puni-avatar span{
+  color: #0f172a !important;
+}
+
+/* Buttons — keep normal (don’t wash out) */
+body:not([data-theme="dark"]) .uni-card .btn{
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  body:not([data-theme="dark"]) .uni-card,
+  body:not([data-theme="dark"]) .uni-card::before,
+  body:not([data-theme="dark"]) .uni-card::after{
+    transition: none !important;
+  }
+}
+/* FIX: Card overlay click-ті бөгемесін */
+.uni-card::before,
+.uni-card::after{
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.uni-card > *{
+  position: relative;
+  z-index: 1;
+}
+
+.uni-card .uni-actions{
+  position: relative;
+  z-index: 2; /* батырмалар әрқашан үстінде */
+}

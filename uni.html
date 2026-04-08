@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Университет - FutureMe</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="ui-pro.css" />
+  <link rel="stylesheet" href="mobile-fix.css" />
+</head>
+<body>
+  <div id="navbar"></div>
+
+  <main class="section">
+    <div class="container">
+      <div class="uni-page-hero">
+        <div class="uni-page-photo">
+          <img id="uniPhoto" alt="University photo" loading="lazy">
+        </div>
+
+        <div class="uni-page-info">
+          <h1 id="uniName">Университет</h1>
+          <p class="muted" id="uniLocation"></p>
+
+          <div class="uni-page-badges" id="uniBadges"></div>
+
+          <div class="uni-page-stats" id="uniStats"></div>
+
+          <div style="margin-top:14px; display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="saveUniBtn" class="btn btn-primary">Сақтау</button>
+            <a href="universities.html" class="btn btn-outline">Университеттер базасы</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-3" style="margin-top:18px;">
+        <div class="feature-card">
+          <h3>Сипаттама</h3>
+          <p class="muted" id="uniDesc"></p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Негізгі ақпарат</h3>
+          <div class="muted" id="uniMore"></div>
+        </div>
+
+        <div class="feature-card">
+          <h3>Неге ұнайды?</h3>
+          <ul class="muted" id="uniWhy" style="padding-left:18px; line-height:1.7;"></ul>
+        </div>
+      </div>
+
+      <div style="margin-top:22px;">
+        <a href="index.html" class="btn btn-outline">← Басты бетке</a>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="script.js"></script>
+  <script src="uni.js"></script>
+</body>
+</html>
